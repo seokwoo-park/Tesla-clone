@@ -10,20 +10,25 @@ import {
 } from "./Section.styled";
 
 import DownArrowPath from "../../assets/images/down-arrow.svg";
+import { Fade } from "react-reveal";
 
 function Section({ title, desc, leftBtn, rightBtn, backgroundImg }) {
   return (
     <Wrap bgImage={backgroundImg}>
-      <ItemText>
-        <h1>{title}</h1>
-        <p>{desc}</p>
-      </ItemText>
+      <Fade bottom>
+        <ItemText>
+          <h1>{title}</h1>
+          <p>{desc}</p>
+        </ItemText>
+      </Fade>
 
       <ButtonContainer>
-        <ButtonGroup>
-          <LeftButton>{leftBtn}</LeftButton>
-          {rightBtn && <RightButton>{rightBtn}</RightButton>}
-        </ButtonGroup>
+        <Fade bottom>
+          <ButtonGroup>
+            <LeftButton>{leftBtn}</LeftButton>
+            {rightBtn && <RightButton>{rightBtn}</RightButton>}
+          </ButtonGroup>
+        </Fade>
 
         <DownArrow src={DownArrowPath} />
       </ButtonContainer>

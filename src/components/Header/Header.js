@@ -1,9 +1,18 @@
-import React from "react";
-import { AiOutlineMenu } from "react-icons/ai";
-import { Menu, SideMenu, StyledHeader } from "./Header.styled";
+import React, { useState } from "react";
+import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import {
+  BurgerNav,
+  CloseIcon,
+  Menu,
+  BurgerOverlay,
+  SideMenu,
+  StyledHeader,
+} from "./Header.styled";
 import logoImg from "../../assets/images/logo.svg";
 
 function Header() {
+  const [showBurger, setShowBurger] = useState(false);
+
   return (
     <StyledHeader>
       <a>
@@ -22,10 +31,45 @@ function Header() {
           <a href="#">Shop</a>
           <a href="#">Account</a>
         </Menu>
-        <i>
+        <i onClick={() => setShowBurger(true)}>
           <AiOutlineMenu />
         </i>
       </SideMenu>
+      <BurgerOverlay
+        onClick={() => setShowBurger(false)}
+        showBurger={showBurger}
+      />
+      <BurgerNav showBurger={showBurger}>
+        <CloseIcon>
+          <i onClick={() => setShowBurger(false)}>
+            <AiOutlineClose />
+          </i>
+        </CloseIcon>
+        <li>
+          <a href="#">Existing Inventory</a>
+        </li>
+        <li>
+          <a href="#">Existing Inventory</a>
+        </li>
+        <li>
+          <a href="#">Existing Inventory</a>
+        </li>
+        <li>
+          <a href="#">Existing Inventory</a>
+        </li>
+        <li>
+          <a href="#"></a>
+        </li>
+        <li>
+          <a href="#"></a>
+        </li>
+        <li>
+          <a href="#"></a>
+        </li>
+        <li>
+          <a href="#"></a>
+        </li>
+      </BurgerNav>
     </StyledHeader>
   );
 }
