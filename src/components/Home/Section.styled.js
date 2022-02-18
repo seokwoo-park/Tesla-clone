@@ -1,11 +1,10 @@
 import styled from "styled-components";
 
-import model_S from "../../assets/images/model-s.jpg";
-
 export const Wrap = styled.div`
   width: 100vw;
   height: 100vh;
-  background-image: url(${model_S});
+  background-image: ${({ bgImage }) =>
+    `url(${require(`../../assets/images/${bgImage}`)})`};
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -13,11 +12,16 @@ export const Wrap = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  scroll-snap-align: center;
 `;
 
 export const ItemText = styled.div`
   padding-top: 15vh;
   text-align: center;
+  h1 {
+    font-size: 2.5em;
+    margin-bottom: 0;
+  }
 `;
 
 export const ButtonGroup = styled.div`
@@ -26,6 +30,10 @@ export const ButtonGroup = styled.div`
   flex-wrap: wrap;
   gap: 1.5em;
   margin-bottom: 7%;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 export const LeftButton = styled.div`

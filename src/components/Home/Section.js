@@ -11,18 +11,18 @@ import {
 
 import DownArrowPath from "../../assets/images/down-arrow.svg";
 
-function Section() {
+function Section({ title, desc, leftBtn, rightBtn, backgroundImg }) {
   return (
-    <Wrap>
+    <Wrap bgImage={backgroundImg}>
       <ItemText>
-        <h1>Model S</h1>
-        <p>Order Online for Touchless Delivery</p>
+        <h1>{title}</h1>
+        <p>{desc}</p>
       </ItemText>
 
       <ButtonContainer>
         <ButtonGroup>
-          <LeftButton>CUSTOM ORDER</LeftButton>
-          <RightButton>EXISTING INVENTORY</RightButton>
+          <LeftButton>{leftBtn}</LeftButton>
+          {rightBtn && <RightButton>{rightBtn}</RightButton>}
         </ButtonGroup>
 
         <DownArrow src={DownArrowPath} />
