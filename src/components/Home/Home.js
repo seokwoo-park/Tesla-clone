@@ -20,18 +20,18 @@ function Home() {
         backgroundImg={"model-3.jpg"}
       />
       <Section
-        title={"Model Y"}
-        desc={"Order Online for Touchless Delivery"}
-        leftBtn={"CUSTOM ORDER"}
-        rightBtn={"EXISTING INVENTORY"}
-        backgroundImg={"model-y.jpg"}
-      />
-      <Section
         title={"Model X"}
         desc={"Order Online for Touchless Delivery"}
         leftBtn={"CUSTOM ORDER"}
         rightBtn={"EXISTING INVENTORY"}
         backgroundImg={"model-x.jpg"}
+      />
+      <Section
+        title={"Model Y"}
+        desc={"Order Online for Touchless Delivery"}
+        leftBtn={"CUSTOM ORDER"}
+        rightBtn={"EXISTING INVENTORY"}
+        backgroundImg={"model-y.jpg"}
       />
       <Section
         title={"Solar Panels"}

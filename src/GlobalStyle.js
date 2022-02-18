@@ -14,11 +14,15 @@ export const GlobalStyle = createGlobalStyle`
 body {
   box-sizing: border-box;
   width: 100%;
-
+  overflow-x: hidden;
 }
 
 h1,h2,h3{
   font-weight: 700;
+}
+
+a{
+  text-decoration: none;
 }
 
 `;

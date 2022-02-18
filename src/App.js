@@ -1,12 +1,18 @@
 import React from "react";
+import { ThemeProvider } from "styled-components";
 import { Header, Home } from "./components";
 
+const theme = {
+  mediaQuery: {
+    tablet: "945px",
+  },
+};
 function App() {
   return (
-    <div className="App">
-      {/* <Header /> */}
+    <ThemeProvider theme={theme}>
+      <Header />
       <Home />
-    </div>
+    </ThemeProvider>
   );
 }
 

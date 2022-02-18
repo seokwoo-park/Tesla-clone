@@ -18,6 +18,7 @@ export const Wrap = styled.div`
 export const ItemText = styled.div`
   padding-top: 15vh;
   text-align: center;
+  /* overflow-y: hidden; */
   h1 {
     font-size: 2.5em;
     margin-bottom: 0;
