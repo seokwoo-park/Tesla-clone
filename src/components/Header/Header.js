@@ -9,9 +9,12 @@ import {
   StyledHeader,
 } from "./Header.styled";
 import logoImg from "../../assets/images/logo.svg";
+import { selectCars } from "../../features/car/carSlice";
+import { useSelector } from "react-redux";
 
 function Header() {
   const [showBurger, setShowBurger] = useState(false);
+  const cars = useSelector(selectCars);
 
   return (
     <StyledHeader>
@@ -19,10 +22,12 @@ function Header() {
         <img src={logoImg} alt="Tesla logo" />
       </a>
       <Menu>
-        <a href="#">Model S</a>
-        <a href="#">Model 3</a>
-        <a href="#">Model X</a>
-        <a href="#">Model Y</a>
+        {cars &&
+          cars.map((car, index) => (
+            <a href="#" key={index}>
+              {car.title}
+            </a>
+          ))}
         <a href="#">Solar Roof</a>
         <a href="#">Solar Panels</a>
       </Menu>
@@ -45,29 +50,26 @@ function Header() {
             <AiOutlineClose />
           </i>
         </CloseIcon>
+        {cars &&
+          cars.map((car, index) => (
+            <li key={index}>
+              <a href="#">{car.title}</a>
+            </li>
+          ))}
         <li>
           <a href="#">Existing Inventory</a>
         </li>
         <li>
-          <a href="#">Existing Inventory</a>
+          <a href="#">Used Inventory</a>
         </li>
         <li>
-          <a href="#">Existing Inventory</a>
+          <a href="#">Trade-in</a>
         </li>
         <li>
-          <a href="#">Existing Inventory</a>
+          <a href="#">Cybertruck</a>
         </li>
         <li>
-          <a href="#"></a>
-        </li>
-        <li>
-          <a href="#"></a>
-        </li>
-        <li>
-          <a href="#"></a>
-        </li>
-        <li>
-          <a href="#"></a>
+          <a href="#">Roadaster</a>
         </li>
       </BurgerNav>
     </StyledHeader>
