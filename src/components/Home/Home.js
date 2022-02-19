@@ -1,38 +1,26 @@
 import React from "react";
 import Section from "./Section";
 import { Container } from "./Home.styled";
+import { selectCars } from "../../features/car/carSlice";
+import { useSelector } from "react-redux";
 
 function Home() {
+  const cars = useSelector(selectCars);
+  console.log(cars);
+
   return (
     <Container>
-      <Section
-        title={"Model S"}
-        desc={"Order Online for Touchless Delivery"}
-        leftBtn={"CUSTOM ORDER"}
-        rightBtn={"EXISTING INVENTORY"}
-        backgroundImg={"model-s.jpg"}
-      />
-      <Section
-        title={"Model 3"}
-        desc={"Order Online for Touchless Delivery"}
-        leftBtn={"CUSTOM ORDER"}
-        rightBtn={"EXISTING INVENTORY"}
-        backgroundImg={"model-3.jpg"}
-      />
-      <Section
-        title={"Model X"}
-        desc={"Order Online for Touchless Delivery"}
-        leftBtn={"CUSTOM ORDER"}
-        rightBtn={"EXISTING INVENTORY"}
-        backgroundImg={"model-x.jpg"}
-      />
-      <Section
-        title={"Model Y"}
-        desc={"Order Online for Touchless Delivery"}
-        leftBtn={"CUSTOM ORDER"}
-        rightBtn={"EXISTING INVENTORY"}
-        backgroundImg={"model-y.jpg"}
-      />
+      {cars &&
+        cars.map((car, index) => (
+          <Section
+            key={index}
+            title={car.title}
+            desc={car.description}
+            leftBtn={"CUSTOM ORDER"}
+            rightBtn={"EXISTING INVENTORY"}
+            backgroundImg={car.image}
+          />
+        ))}
       <Section
         title={"Solar Panels"}
         desc={"Lowest Cost Solar Panels in America"}
