@@ -30,11 +30,13 @@ export const StyledDetail = styled.div`
 export const DetailText = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 `;
 
 export const TextWrapper = styled(DetailText)`
   flex-direction: column;
-  margin: 3em;
+  margin: 2.5em;
 
   h3,
   p {
@@ -44,5 +46,22 @@ export const TextWrapper = styled(DetailText)`
   h3 {
     font-size: 2em;
     margin: 0;
+  }
+
+  @media (max-width: ${({ theme }) => theme.mediaQuery.tablet}) {
+    margin: 1em;
+  }
+`;
+
+export const DetailBtn = styled.button`
+  background-color: transparent;
+  border: solid 3px #fff;
+  border-radius: 100px;
+  padding: 0.5em 3em;
+  color: #fff;
+
+  @media (max-width: ${({ theme }) => theme.mediaQuery.tablet}) {
+    margin: 1em;
+    width: 100%;
   }
 `;

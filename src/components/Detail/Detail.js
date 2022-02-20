@@ -2,7 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { selectCars } from "../../features/car/carSlice";
 import { useParams } from "react-router-dom";
-import { DetailText, StyledDetail, TextWrapper } from "./Detail.style";
+import {
+  DetailBtn,
+  DetailText,
+  StyledDetail,
+  TextWrapper,
+} from "./Detail.style";
 
 function Detail() {
   let params = useParams();
@@ -41,6 +46,7 @@ function Detail() {
           <h3>{currentCar.peakPower} hp</h3>
           <p>Peak Power</p>
         </TextWrapper>
+        <DetailBtn> ORDER NOW </DetailBtn>
       </DetailText>
     </StyledDetail>
   );
