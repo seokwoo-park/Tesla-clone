@@ -6,7 +6,6 @@ import { useSelector } from "react-redux";
 
 function Home() {
   const cars = useSelector(selectCars);
-  console.log(cars);
 
   return (
     <Container>

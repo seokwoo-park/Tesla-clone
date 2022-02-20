@@ -11,6 +11,7 @@ import {
 import logoImg from "../../assets/images/logo.svg";
 import { selectCars } from "../../features/car/carSlice";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 function Header() {
   const [showBurger, setShowBurger] = useState(false);
@@ -24,9 +25,9 @@ function Header() {
       <Menu>
         {cars &&
           cars.map((car, index) => (
-            <a href="#" key={index}>
+            <Link to={car.title.toLowerCase().replace(" ", "")} key={index}>
               {car.title}
-            </a>
+            </Link>
           ))}
         <a href="#">Solar Roof</a>
         <a href="#">Solar Panels</a>
